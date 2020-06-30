@@ -4,4 +4,4 @@ sun_smart_cover:
   entities:
     sensor: [scene sensor created as part of the fibaro scene]
     cover: [cover entity]
-    light: [light that will be toggled when using a fibaro switch 2 - leave empty if no light will be toggled by the scene activation]
+    light: [light that will be toggled when using a fibaro switch 2 - not required if no light will be toggled by the scene activation]
