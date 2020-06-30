@@ -1,0 +1,34 @@
+dimmer_bedroom:
+  module: hue_dimmer_switch_deconz
+  class: HueDimmerSwitch
+  entities:
+    switch: bedroom_dimmer
+    light: light.bedroombulb_1_bedroombulb_1
+spare_smart_cover:
+  module: smartcover
+  class: SmartCover
+  entities:
+    sensor: sensor.spareroom_spareroomlight_scene_state_1
+    cover: cover.spare_room
+    light: light.spare_room_light
+bridget_smart_cover:
+  module: smartcover
+  class: SmartCover
+  entities:
+    sensor: sensor.bridgetsroom_bridget_scene_state_1
+    cover: cover.spare
+    light: light.bridget_s_pendant
+alex_smart_cover:
+  module: smartcover
+  class: SmartCover
+  entities:
+    sensor: sensor.alexsroom_alex_scene_state_1
+    cover: cover.alex_s_blind
+    light: light.alex_s_pendant
+sun_smart_cover:
+  module: smartcover
+  class: SmartCover
+  entities:
+    sensor: sensor.great_room_great_room_dimmer_scene_state
+    cover: cover.sunshade
+    light: light.great_room_great_room_dimmer_dimmer_2
