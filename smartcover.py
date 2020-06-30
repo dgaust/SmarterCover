@@ -19,7 +19,10 @@ class SmartCover(hass.Hass):
         self.log("Position: " + str(self.coverposition))
         if new == "Key Held down" or new == "14":
            self.log(self.coverstate)
-           self.call_service("light/toggle", entity_id = self.light)
+           # Don't toggle the light if using a dimmer state switch. Unfortunately the Switch/Switch 2 toggles the load when activating a scene.
+           # The dimmer doesn't exhibit this behaviour so we can ignore it.
+           if new != "14":
+              self.call_service("light/toggle", entity_id = self.light)
            if self.coverstate == "opening" or self.coverstate == "closing":
               self.call_service("cover/stop_cover", entity_id=self.cover)
               self.log("Stopping Blind")
