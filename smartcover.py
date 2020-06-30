@@ -1,5 +1,4 @@
 import appdaemon.plugins.hass.hassapi as hass
-import time
 
 class SmartCover(hass.Hass):
     """Smart cover control based on state"""
@@ -8,7 +7,10 @@ class SmartCover(hass.Hass):
         self.entities = self.args["entities"]
         self.cover = self.entities["cover"]
         self.sensor_state = self.entities["sensor"]
-        self.light = self.entities["light"]
+        try:
+          self.light = self.entities["light"]
+        except:
+          self.log("No light specified")
         self.listen_state(self.statechange, self.sensor_state)
         self.listen_state(self.blindpositionchange, self.cover, attribute="current_position")
         
