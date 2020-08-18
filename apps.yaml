@@ -1,3 +1,4 @@
+# Example for apps.yaml to use fibaro scenes for control
 sun_smart_cover:
   module: smartcover
   class: SmartCover
@@ -5,3 +6,10 @@ sun_smart_cover:
     sensor: [scene sensor created as part of the fibaro scene]
     cover: [cover entity]
     light: [light that will be toggled when using a fibaro switch 2 - not required if no light will be toggled by the scene activation]
+
+# Example for apps.yaml to reset cover
+reset_cover:
+  module: resetcover
+  class: ResetCover
+  entities:
+    cover: cover.sunshade
